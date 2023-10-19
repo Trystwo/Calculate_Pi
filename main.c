@@ -1,35 +1,35 @@
+// 计算1/(2n - 1)的循环节
+// 2018.5.17
+// Creator: bxd
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
+#include <math.h>
 
-int main() {
-    long long n = 10000000000; // number of points to generate
-    long long count = 0; // number of points within the circle
-    double r = 1.0; // radius of the circle
-    double x, y; // coordinates of each point
-    double pi; // estimated value of pi
-
-    // seed the random number generator
-    srand(time(NULL));
-
-    // generate n random points and count the number within the circle
-    for (int i = 0; i < (n/4); i++) {
-        // generate random coordinates within the square
-        x = (double)rand() / RAND_MAX * 2 * r - r;
-        y = (double)rand() / RAND_MAX * 2 * r - r;
-
-        // check if the point is within the circle
-        if (x * x + y * y <= r * r) {
-            count++;
+int main()
+{
+    int n;
+    double sum = 0;
+    double pi;
+    double temp = 1;
+    int i = 1;
+    printf("Please input n: ");
+    scanf("%d", &n);
+    // 计算1/(2n - 1)的循环节
+    while (fabs(temp) >= 1e-6) // fabs()函数用于计算浮点数的绝对值
+    {
+        temp = 1.0 / (2 * i - 1);
+        if (i % 2 == 0)
+        {
+            sum -= temp;
         }
+        else
+        {
+            sum += temp;
+        }
+        i++;
     }
-
-    // estimate pi as 4 times the ratio of points within the circle to total points
-    //pi = 4.0 * count / n;
-
-    // print the estimated value of pi
-    printf("Estimated value of pi: %f\n", pi);
-    printf("pi: %d\n", count);
-
+    pi = 4 * sum;
+    printf("pi = %lf\n", pi);
     return 0;
 }
