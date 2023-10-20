@@ -1,11 +1,10 @@
 /*计算1/n后10位的二进制小数*/
 #include "include.h"
-int repeating_segment()
-{   
-    int n = 1;
+int repeating_segment(int input)
+{   int n = 1;
     int i;
     int s;
-    while(n < 100)
+    while(n <= input)
     {
         s = 1;
         i = 0;

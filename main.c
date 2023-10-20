@@ -3,6 +3,7 @@
 
 int main()
 {   
-    repeating_segment();
+    int n = 100;
+    repeating_segment(n);
 }
 
