@@ -4,7 +4,7 @@
 /*计算1/n后10位的二进制小数*/
 int repeating_segment()
 {   
-    int n, i, s, m, t;
+    int n, m, i;
     unsigned char *a;
     while(1)
     {
@@ -20,18 +20,7 @@ int repeating_segment()
             printf("%d",n/m);
             n = n%m;
         }
-        // for(i=0;n!=t;i++)
-        // {    
-        //     n*10;
-        //     printf("%d",n/m);
-        //     //如果n/m不是循环小数
-        //     n = n%m;
-        //     if((n==0)||(n==t/10))
-        //     {
-        //         printf("\n");
-        //         break;
-        //     }
-        // }
+
         printf("\nn/m的循环节长度为：%d\n",i-a[n]);
     
     }
