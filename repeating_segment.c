@@ -13,8 +13,9 @@ int repeating_segment()
         a  = calloc(m, sizeof(unsigned char));
         printf("n/m的循环节为：%d.", n/m );
         n = n%m;
-        for(i=0;a[n]==0;i++)
+        for(i=0;a[n]==0;i++)//再次出现某个余数时，停止循环
         {   
+            //保存出现过的余数
             a[n] = i;
             n = n*10;
             printf("%d",n/m);
