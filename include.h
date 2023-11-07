@@ -5,4 +5,5 @@
 #include <time.h>
 
 int repeating_segment();
+int pi(int argc, char * argv[]);
 
