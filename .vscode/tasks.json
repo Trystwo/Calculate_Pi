@@ -9,6 +9,7 @@
                 "-g",
                 //"${file}",
                 "${fileDirname}\\*.c",
+                "${fileDirname}\\include\\*.c",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],

@@ -1,9 +1,8 @@
 #include "include.h"
 
-#define NON_ZERO !0
 /*计算1/n后10位的二进制小数*/
 int repeating_segment()
-{   
+{ 
     int n, m, i;
     unsigned char *a;
     while(1)
@@ -13,7 +12,7 @@ int repeating_segment()
         a  = calloc(m, sizeof(unsigned char));
         printf("n/m的循环节为：%d.", n/m );
         n = n%m;
-        for(i=0;a[n]==0;i++)//再次出现某个余数时，停止循环
+        for(i=1;n!=0&&a[n]==0;i++)//再次出现某个余数时，停止循环
         {   
             //保存出现过的余数
             a[n] = i;
