@@ -19,7 +19,7 @@ int repeating_segment()
             a[n] = i;
             n = n*10;
             printf("%d",n/m);
-            n = n%m;
+            n = n%m;  
         }
 
         printf("\nn/m的循环节长度为：%d\n",i-a[n]);
